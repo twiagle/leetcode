@@ -1,4 +1,4 @@
-package com.lc3;
+package com;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  *HashSet
  */
-class Solution {
+class lc3 {
     public int lengthOfLongestSubstring(String s) {
         Set set = new HashSet();
         int max = 0;
@@ -28,7 +28,7 @@ class Solution {
     }
 }
 /*
-* HashMap 直接找到位置dfd
+* HashMap 直接找到位置
 *
 * */
 class Solution {
