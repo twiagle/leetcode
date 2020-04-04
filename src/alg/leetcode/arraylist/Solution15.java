@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  *  15.三数之和
+ *  skill: sorted + double pointer
  */
 class Solution15 {
     public static List<List<Integer>> threeSum(int[] nums) {
