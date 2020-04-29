@@ -42,7 +42,7 @@ public class Solution360_1 {
 
         int order = 0;
         PriorityQueue<Integer[]> minHeap = new PriorityQueue<>((n1, n2) -> n1[0] - n2[0]);
-        for (int i = 0; i < m; i++) {//如果用cin.hasNext()或者nextInt会阻塞
+        for (int i = 0; i < m; i++) {//如果用cin.hasNext()或者nextInt会阻塞,完了试试hasNextInt吧
             minHeap.offer(new Integer[]{Integer.parseInt(cin.nextLine()), order++});
         }
         int[] result = new int[m];
