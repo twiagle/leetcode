@@ -1,6 +1,7 @@
 package leetcode.linkedlist;
 
-import leetcode.ListNode;
+
+import structures.ListNode;
 
 import java.util.Objects;
 import java.util.PriorityQueue;

@@ -8,6 +8,7 @@ import java.util.*;
  * 下一个元素只能选它自己或者在它之后的元素，不能选给定数组在它之前的
  * [2,2,3]和[3,2,2]只算一个，单元素允许重复
  * 无负数
+ * 可以[1,2,3] 4 举例
  */
 public class Solution39 {
     Deque<Integer> stack = new ArrayDeque<>();//store trace，和回溯算法本体无关
@@ -27,6 +28,7 @@ public class Solution39 {
         }
         //还没到达，也没失败
         //允许重复的问题是不能用length控制，永远进入自己可就麻烦了
+        //保证不会有重复
         for (int i = index; i< candidates.length; i++) {
             stack.push(candidates[i]);
             backTracking(i, target - candidates[i]);

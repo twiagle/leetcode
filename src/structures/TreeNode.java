@@ -1,4 +1,4 @@
-package swordOffer;
+package structures;
 
 
 public class TreeNode {
