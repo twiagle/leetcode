@@ -1,4 +1,4 @@
-package leetcode.arraylist;
+package leetcode.string;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class Solution3 {
             char c = str[fast];
             if(map.containsKey(c)){
                 int pos = map.get(c);
-                if(slow < pos) slow = pos+1;
+                //abccba第二次遇到a时slow已经指向第二个c了所以不能指向第一个b
                 slow = slow < pos ? pos + 1 : slow;
             }else{
                 int curLen = fast-slow+1;

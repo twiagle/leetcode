@@ -1,8 +1,6 @@
-package alg;
+package leetcode.arraylist;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class lc56 {
     int[][] merge(int[][] intervals) {
@@ -25,5 +23,7 @@ public class lc56 {
         }
 
         return result.toArray(new int[result.size()][]);
+
     }
+
 }
