@@ -33,4 +33,33 @@ public class Solution5 {
         }
         return s.substring(pos,pos+maxLen);
     }
+
+    public String same(String s){
+        char[] str = s.toCharArray();
+        int maxLen = 1;
+        int strLen = s.length();
+        boolean[][] dp = new boolean[strLen][strLen];
+        int start = 0;
+
+        for (int delta = 0; delta < strLen; delta++) {
+            for (int row = 0; row < strLen; row++) {
+                int col = row + delta;
+                if(delta == 0) dp[row][col] = true;
+                else if(delta == 1) {
+                    if(dp[row][col] = str[col] == str[row]){
+                        start = row;
+                        maxLen = 2;
+                    }
+                }else{
+                    if(dp[row + 1][col - 1] && (dp[row][col] = str[col] == str[row])){
+                        if(col - row + 1 > maxLen){
+                           maxLen = col-row+1;
+                           start = row;
+                        }
+                    }
+                }
+            }
+        }
+        return new String(str, start, maxLen);
+    }
 }

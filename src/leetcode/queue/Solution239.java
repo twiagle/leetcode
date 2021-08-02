@@ -10,7 +10,7 @@ import java.util.List;
  * 单调队列 每个新值，如果小于已有则插入，如果大于已有则剔除已有，如此保证队首是最大，
  * 由于实时进出队列，所以不要设置临时变量了，修改的太多，队列一变就要改，所以要记清楚队列存放的是index啊
  */
-class Solution239 {
+public class Solution239 {
     public static int[] maxSlidingWindow(int[] nums, int k) {
         int[] res = new int[nums.length - k +1];
         List<Integer> resList = new LinkedList<>();

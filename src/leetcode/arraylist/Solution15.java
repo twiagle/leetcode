@@ -11,7 +11,10 @@ import java.util.List;
 class Solution15 {
     public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<>();
+        int[] iiii = new int[2];
+        List<List<Integer>> result = new ArrayList<>(0);
+        result.add(null);
+        result.get(1);
         int first=0;
         while (first < nums.length -2 && nums[first] <= 0) {
             if(first > 0 && nums[first] == nums[first-1]) {//如果这里写成while，必须把父亲的while条件也写进去

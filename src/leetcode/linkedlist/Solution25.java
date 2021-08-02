@@ -2,7 +2,9 @@ package leetcode.linkedlist;
 
 
 import structures.ListNode;
-
+/*
+反转单链表，while(cur !=null)  第一步next = cur.next  最后一步 cur = next;
+ */
 public class Solution25 {
     public static ListNode reverseKGroup(ListNode head, int k) {
         if(head == null) return head;

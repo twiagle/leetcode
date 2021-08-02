@@ -5,16 +5,17 @@ import java.util.Random;
 class lc215 {
     int[] nums;
     int targetIndex;
+    static Random random = new Random();
     public int findKthLargest(int[] nums, int k) {
         this.nums = nums;
         targetIndex = nums.length - k;
         return quickSelect(0, nums.length-1);
     }
     void quickSort(int left, int right){
-        if(left == right) return;
+        if(left >= right) return;
         int pivot = partition(left, right);
-        partition(left,pivot-1);
-        partition(pivot + 1, right);
+        quickSort(left,pivot-1);
+        quickSort(pivot + 1, right);
     }
 
     public int quickSelect(int left, int right){
@@ -28,7 +29,7 @@ class lc215 {
     }
     //每次partition都返回随机分点的正确位置，同时使得左边小，右边大
     public int partition(int left, int right){
-        int pivotIndex = new Random().nextInt(right-left) + left;
+        int pivotIndex = random.nextInt(right-left) + left;
         int pivot = nums[pivotIndex];
         int slow = left, fast = slow;
         //先把分点放到最右
