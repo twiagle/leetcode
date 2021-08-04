@@ -4,8 +4,8 @@ import java.util.*;
 
 /**
  * 回溯就是暴力搜索的同时知道及时止损
- * 去重的方法：类似求一个集合有多少非空子集：[a,b,c] a, ab, abc,b,bc,c
- * 下一个元素只能选它自己或者在它之后的元素，不能选给定数组在它之前的
+ * 去重的方法：类似求一个集合有多少非空子集：[a,b,c] a, ab, abc,b,bc,c 结果集不计算顺序(去重)，此时需要按顺序搜索，才能做到不重不漏
+ * 下一个元素只能选  它自己或者在它之后的元素，不能选给定数组在它之前的
  * [2,2,3]和[3,2,2]只算一个，单元素允许重复
  * 无负数
  * 可以[1,2,3] 4 举例
@@ -29,6 +29,7 @@ public class Solution39 {
         //还没到达，也没失败
         //允许重复的问题是不能用length控制，永远进入自己可就麻烦了
         //保证不会有重复
+        // 允许当前元素加入，故无法visited去除
         for (int i = index; i< candidates.length; i++) {
             stack.push(candidates[i]);
             backTracking(i, target - candidates[i]);
